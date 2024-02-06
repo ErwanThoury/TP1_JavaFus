@@ -665,6 +665,7 @@ public class HelloController implements Initializable {
         }
         p.perdrePDV(m.attaqueTotale());
         vitaMaj();
+        mortBool();
 
     }
     @FXML
@@ -849,6 +850,7 @@ public class HelloController implements Initializable {
             lblVieMaxEnnemi.setTextFill(Color.BLACK);
             lblSlash1.setTextFill(Color.BLACK);
             lblSlash2.setTextFill(Color.BLACK);
+            deleteEffect(imgAlea);
         }
         else{
             versionGraphique = "deuxPointZero/";
@@ -862,6 +864,7 @@ public class HelloController implements Initializable {
             lblVieMaxEnnemi.setTextFill(Color.WHITE);
             lblSlash1.setTextFill(Color.WHITE);
             lblSlash2.setTextFill(Color.WHITE);
+            changeEffect(imgAlea, "White");
 
         }
         changeImageViewImg(imgPortrait, "Portrait/"+c.getLogoURL());
@@ -906,6 +909,9 @@ public class HelloController implements Initializable {
         changeImageViewImg(imgClassePagePerso,"Classes/"+p.getClasseDuPerso().getLogoURL());
         changeImageViewImg(imgCoeurAllie, "Statistiques/statVita.png");
         changeImageViewImg(imgCoeurEnnemi, "Statistiques/statVita.png");
+        changeImageViewImg(imgAlea, "Interfaces/aleatoire.png");
+        changeImageViewImg(imgBoss, "Interfaces/couronne.png");
+        changeImageViewImg(imgPotionRappel, "Interfaces/potionRappel.png");
     }
     public void changeEffect(ImageView imv, String bolus)
     {
@@ -926,6 +932,8 @@ public class HelloController implements Initializable {
             ds.setColor(Color.GREEN);
         else if (bolus.equals("Down"))
             ds.setColor(Color.DARKRED);
+        else if (bolus.equals("White"))
+            ds.setColor(Color.WHITE);
         imv.setEffect(ds);
     }
 
