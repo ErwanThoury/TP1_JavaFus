@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sio.tp1_javafus.HelloController">
+   <top>
+      <AnchorPane prefHeight="50.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="imgBarreDuHaut" fitHeight="50.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/unPointVingtNeuf/Interfaces/barreWindows.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#clickChangeVersion" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <StackPane prefHeight="600.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="imgFond" fitHeight="600.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/unPointVingtNeuf/Maps/zoneMarchand.PNG" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="apCommencement" prefHeight="600.0" prefWidth="900.0">
+               <children>
+                  <VBox prefHeight="600.0" prefWidth="900.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="300.0" prefWidth="900.0">
+                           <children>
+                              <ListView fx:id="lvClasses" fixedCellSize="-12.0" onMouseClicked="#clickChangeClasse" prefHeight="280.0" prefWidth="190.0">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </ListView>
+                              <VBox alignment="CENTER" prefHeight="300.0" prefWidth="150.0">
+                                 <children>
+                                    <ImageView fx:id="imgLogoClasse" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Images/unPointVingtNeuf/Logo/cra.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="imgPortrait" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Images/unPointVingtNeuf/Portrait/cra.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <TextArea fx:id="txtClasses" editable="false" prefHeight="250.0" prefWidth="450.0">
+                                 <HBox.margin>
+                                    <Insets bottom="25.0" top="25.0" />
+                                 </HBox.margin>
+                              </TextArea>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="300.0" prefWidth="900.0">
+                           <children>
+                              <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="110.0">
+                                 <children>
+                                    <HBox prefHeight="50.0" prefWidth="100.0">
+                                       <children>
+                                          <ImageView fx:id="imgFlecheBonus" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                             <image>
+                                                <Image url="@../../Images/unPointVingtNeuf/Interfaces/FlecheVerte.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="imgStatBonus" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../Images/unPointVingtNeuf/Statistiques/statFeu.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="50.0" prefWidth="100.0">
+                                       <children>
+                                          <ImageView fx:id="imgFlecheMalus" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                             <image>
+                                                <Image url="@../../Images/unPointVingtNeuf/Interfaces/FlecheRouge.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="imgStatMalus" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../Images/unPointVingtNeuf/Statistiques/statTerre.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </VBox>
+                              <ImageView fx:id="imgClasseChoix" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/unPointVingtNeuf/Classes/cra.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="50.0" right="225.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <VBox prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="150.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fx:id="imgZoneNomClasse" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../Images/unPointVingtNeuf/Interfaces/interfaceChoix.PNG" />
+                                             </image>
+                                          </ImageView>
+                                          <TextField fx:id="txtNomPerso" alignment="CENTER" layoutX="26.0" layoutY="14.0" promptText="Saisir un nom" />
+                                          <Label fx:id="lblNomClasse" alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="46.0" prefHeight="27.0" prefWidth="191.0" text="Pandawa" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Bold" size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="50.0" />
+                                       </VBox.margin>
+                                    </AnchorPane>
+                                    <ImageView fx:id="imgJouer" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#onClickCreatePerso" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Images/unPointVingtNeuf/Interfaces/interfaceValider.PNG" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="apChoixAstrub" prefHeight="600.0" prefWidth="900.0">
+               <children>
+                  <ImageView fx:id="imgChoixFichePerso" fitHeight="30.0" fitWidth="30.0" layoutX="112.0" layoutY="328.0" onMouseClicked="#GoToFichePerso" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/unPointVingtNeuf/Interfaces/pointBleu.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgChoixMonstre" fitHeight="30.0" fitWidth="30.0" layoutX="435.0" layoutY="178.0" onMouseClicked="#GoToZoneMonstre" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/unPointVingtNeuf/Interfaces/pointMarron.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgChoixBoutique" fitHeight="30.0" fitWidth="30.0" layoutX="795.0" layoutY="208.0" onMouseClicked="#GoToBoutique" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/unPointVingtNeuf/Interfaces/pointRouge.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="apChoixZone" prefHeight="600.0" prefWidth="900.0">
+               <children>
+                  <ImageView fx:id="imgMonstreTofu" fitHeight="150.0" fitWidth="200.0" layoutX="47.0" layoutY="225.0" onMouseClicked="#ClickGoToZoneTofu" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/unPointVingtNeuf/Monstres/monstreTofuMineur.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgMonstreBouftou" fitHeight="343.0" fitWidth="346.0" layoutX="259.0" layoutY="99.0" onMouseClicked="#ClickGoToZoneBouftou" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/unPointVingtNeuf/Monstres/monstreBouftou.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgMonstreCraqueleur" fitHeight="383.0" fitWidth="376.0" layoutX="524.0" layoutY="210.0" onMouseClicked="#ClickGoToZoneCraqueleur" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/unPointVingtNeuf/Monstres/monstreCraqueleur.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="apChoixAction" prefHeight="600.0" prefWidth="900.0">
+               <children>
+                  <ImageView fx:id="imgPotionRappel" fitHeight="100.0" fitWidth="100.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#clickGoToAstrub" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/unPointVingtNeuf/Interfaces/potionRappel.png" />
+                     </image>
+                     <effect>
+                        <DropShadow height="30.0" radius="14.5" spread="0.7" width="30.0">
+                           <color>
+                              <Color red="0.4861111044883728" green="0.5289351940155029" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </ImageView>
+                  <ImageView fx:id="imgBoss" fitHeight="331.0" fitWidth="362.0" layoutX="467.0" onMouseClicked="#goToBoss" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/unPointVingtNeuf/Interfaces/couronne.png" />
+                     </image>
+                     <effect>
+                        <DropShadow height="30.0" radius="14.5" spread="0.7" width="30.0">
+                           <color>
+                              <Color red="0.8026315569877625" green="0.762499988079071" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </ImageView>
+                  <ImageView fx:id="imgAlea" fitHeight="200.0" fitWidth="200.0" layoutY="400.0" onMouseClicked="#goToAlea" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/unPointVingtNeuf/Interfaces/aleatoire.png" />
+                     </image>
+                     <effect>
+                        <DropShadow height="30.0" radius="14.5" spread="0.7" width="30.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="apCombat" prefHeight="600.0" prefWidth="900.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="600.0" prefWidth="900.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <AnchorPane prefHeight="150.0" prefWidth="300.0">
+                                 <children>
+                                    <ImageView fx:id="imgInterfaceCombatAllie" fitHeight="150.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Images/unPointVingtNeuf/Interfaces/interfaceChoix.PNG" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="lblNomAllie" alignment="CENTER" layoutX="14.0" layoutY="28.0" prefHeight="24.0" prefWidth="275.0" text="Craqueterre monstrueux" textFill="WHITE">
+                                       <font>
+                                          <Font name="Rubik Bold Italic" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblClasseCombat" alignment="CENTER" layoutX="13.0" layoutY="75.0" prefHeight="24.0" prefWidth="276.0" textFill="WHITE">
+                                       <font>
+                                          <Font name="Rubik Bold Italic" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <ImageView fx:id="imgPersonnageCbt" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/unPointVingtNeuf/Classes/cra.png" />
+                                 </image>
+                                 <VBox.margin>
+                                    <Insets top="50.0" />
+                                 </VBox.margin>
+                              </ImageView>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="50.0" right="100.0" top="50.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <AnchorPane prefHeight="150.0" prefWidth="300.0">
+                                 <children>
+                                    <ImageView fx:id="imgInterfaceCombatEnnemi" fitHeight="150.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Images/unPointVingtNeuf/Interfaces/interfaceChoix.PNG" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="lblNomEnnemi" alignment="CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="27.0" prefHeight="24.0" prefWidth="279.0" text="Craqueterre monstrueux" textFill="WHITE">
+                                       <font>
+                                          <Font name="Rubik Bold Italic" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblTypeMonstre" alignment="CENTER" layoutX="13.0" layoutY="75.0" prefHeight="24.0" prefWidth="276.0" textFill="WHITE">
+                                       <font>
+                                          <Font name="Rubik Bold Italic" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <ImageView fx:id="imgMonstreCbt" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                                 <VBox.margin>
+                                    <Insets top="50.0" />
+                                 </VBox.margin>
+                                 <image>
+                                    <Image url="@../../Images/unPointVingtNeuf/Monstres/monstreBouftouMajeur.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="50.0" left="100.0" top="50.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="apBoutique" prefHeight="600.0" prefWidth="900.0">
+               <children>
+                  <ImageView fx:id="imgFondBoutique" fitHeight="525.0" fitWidth="525.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/unPointVingtNeuf/Interfaces/fondBoutique.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER" layoutX="14.0" layoutY="50.0" prefHeight="500.0" prefWidth="500.0">
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="500.0">
+                           <children>
+                              <Label fx:id="lblParchFeuMarchand" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="60.0" prefWidth="140.0" text="1500">
+                                 <font>
+                                    <Font name="Rubik Bold Italic" size="50.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="imgParchFeu" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#ClickUpFeu" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/unPointVingtNeuf/Parchemins/parcheminFeu.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="500.0">
+                           <children>
+                              <ImageView fx:id="imgParchTerre" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#ClickUpTerre" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/unPointVingtNeuf/Parchemins/parcheminTerre.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lblParchTerreMarchand" prefHeight="60.0" prefWidth="140.0" text="1500">
+                                 <font>
+                                    <Font name="Rubik Bold Italic" size="50.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="500.0">
+                           <children>
+                              <Label fx:id="lblParchEauMarchand" alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="140.0" text="1500">
+                                 <font>
+                                    <Font name="Rubik Bold Italic" size="50.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="imgParchEau" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#ClickUpEau" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/unPointVingtNeuf/Parchemins/parcheminEau.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="500.0">
+                           <children>
+                              <ImageView fx:id="imgParchAir" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#ClickUpAir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/unPointVingtNeuf/Parchemins/parcheminAir.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lblParchAirMarchand" prefHeight="60.0" prefWidth="140.0" text="1500">
+                                 <font>
+                                    <Font name="Rubik Bold Italic" size="50.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="500.0">
+                           <children>
+                              <Label fx:id="lblKamaMarchand" prefHeight="60.0" prefWidth="140.0" text="1500">
+                                 <font>
+                                    <Font name="Rubik Bold Italic" size="50.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/unPointVingtNeuf/Statistiques/Kama.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="850.0" onMouseClicked="#clickGoToAstrub" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/unPointVingtNeuf/Interfaces/croix.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="apPagePerso" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="850.0" onMouseClicked="#clickGoToAstrub" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/unPointVingtNeuf/Interfaces/croix.png" />
+                     </image>
+                  </ImageView>
+                  <HBox alignment="CENTER" layoutY="50.0" prefHeight="500.0" prefWidth="900.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="500.0" prefWidth="300.0">
+                           <children>
+                              <ImageView fx:id="imgClassePagePerso" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/unPointVingtNeuf/Classes/cra.png" />
+                                 </image>
+                                 <VBox.margin>
+                                    <Insets bottom="50.0" top="100.0" />
+                                 </VBox.margin>
+                              </ImageView>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0">
+                                 <children>
+                                    <Label fx:id="lblKama" text="500">
+                                       <font>
+                                          <Font name="Rubik Bold Italic" size="36.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="30.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <ImageView fitHeight="43.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Images/unPointVingtNeuf/Statistiques/Kama.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="500.0" prefWidth="200.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="imgStatPersoFeu" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Images/unPointVingtNeuf/Statistiques/statFeu.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Label fx:id="lblFeuPagePerso" text="100">
+                                       <font>
+                                          <Font name="Rubik Bold Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="imgStatPersoTerre" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Images/unPointVingtNeuf/Statistiques/statTerre.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Label fx:id="lblTerrePagePerso" text="100">
+                                       <font>
+                                          <Font name="Rubik Bold Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="imgStatPersoEau" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Images/unPointVingtNeuf/Statistiques/statEau.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Label fx:id="lblEauPagePerso" text="100">
+                                       <font>
+                                          <Font name="Rubik Bold Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="imgStatPersoAir" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Images/unPointVingtNeuf/Statistiques/statAir.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Label fx:id="lblAirPagePerso" text="100">
+                                       <font>
+                                          <Font name="Rubik Bold Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="500.0" prefWidth="200.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="imgStatPersoVie" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Images/unPointVingtNeuf/Statistiques/statVita.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Label fx:id="lblVieActuellePagePerso" text="100">
+                                       <font>
+                                          <Font name="Rubik Bold Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="/">
+                                       <font>
+                                          <Font name="Rubik Bold Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblVieMaxPagePerso" text="100">
+                                       <font>
+                                          <Font name="Rubik Bold Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="imgStatPersoAttaque" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Images/unPointVingtNeuf/Statistiques/statAttaque.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Label fx:id="lblAttaquePagePerso" text="100">
+                                       <font>
+                                          <Font name="Rubik Bold Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="imgStatPersoDefense" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Images/unPointVingtNeuf/Statistiques/statDefense.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Label fx:id="lblDefensePagePerso" text="100">
+                                       <font>
+                                          <Font name="Rubik Bold Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="imgStatPersoEsquive" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Images/unPointVingtNeuf/Statistiques/statEsquive.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Label fx:id="lblEsquivePagePerso" text="100">
+                                       <font>
+                                          <Font name="Rubik Bold Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="500.0" prefWidth="200.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="imgStatPersoSoin" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Images/unPointVingtNeuf/Statistiques/statSoin.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Label fx:id="lblSoinPagePerso" text="100">
+                                       <font>
+                                          <Font name="Rubik Bold Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="imgStatPersoCritique" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Images/unPointVingtNeuf/Statistiques/statCritique.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Label fx:id="lblCritiquePagePerso" text="100">
+                                       <font>
+                                          <Font name="Rubik Bold Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="imgStatPersoProspection" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Images/unPointVingtNeuf/Statistiques/statPros.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Label fx:id="lblProspectionPagePerso" text="100">
+                                       <font>
+                                          <Font name="Rubik Bold Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="imgStatPersoFuite" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Images/unPointVingtNeuf/Statistiques/statFuite.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Label fx:id="lblFuitePagePerso" text="100">
+                                       <font>
+                                          <Font name="Rubik Bold Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </center>
+   <bottom>
+      <AnchorPane prefHeight="50.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="imgBarreDuBas" fitHeight="50.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/unPointVingtNeuf/Interfaces/fond.PNG" />
+               </image>
+            </ImageView>
+            <HBox fx:id="hbCombat" alignment="CENTER" prefHeight="50.0" prefWidth="900.0">
+               <children>
+                  <ImageView fx:id="imgCoeurAllie" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/unPointVingtNeuf/Statistiques/statVita.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label fx:id="lblVieActuelleAllie" alignment="CENTER" contentDisplay="CENTER" text="999" textAlignment="CENTER">
+                     <font>
+                        <Font name="Rubik Bold Italic" size="29.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="/">
+                     <font>
+                        <Font name="Rubik Bold Italic" size="29.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblVieMaxAllie" text="999">
+                     <font>
+                        <Font name="Rubik Bold Italic" size="29.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ImageView fx:id="imgBoutonAttaque" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#ClickImageAttaque" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/unPointVingtNeuf/Combat/combatAttaqueTerre.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="40.0" right="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fx:id="imgBoutonDefense" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#ClickImageDefense" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/unPointVingtNeuf/Combat/combatDefenseEau.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fx:id="imgBoutonFuite" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#ClickImageFuite" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/unPointVingtNeuf/Combat/combatFuiteAir.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fx:id="imgBoutonSoin" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#ClickImageSoin" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/unPointVingtNeuf/Combat/combatSoinFeu.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="40.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label fx:id="lblVieActuelleEnnemi" text="999">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Rubik Bold Italic" size="29.0" />
+                     </font>
+                  </Label>
+                  <Label text="/">
+                     <font>
+                        <Font name="Rubik Bold Italic" size="29.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblVieMaxEnnemi" text="999">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Rubik Bold Italic" size="29.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="imgCoeurEnnemi" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/unPointVingtNeuf/Statistiques/statVita.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>
