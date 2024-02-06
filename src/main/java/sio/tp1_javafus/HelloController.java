@@ -872,6 +872,11 @@ public class HelloController implements Initializable {
         changeImageViewImg(imgBoutonDefense, "Combat/combatDefenseEau.png");
         changeImageViewImg(imgBoutonFuite, "Combat/combatFuiteAir.png");
         changeImageViewImg(imgBoutonSoin, "Combat/combatSoinFeu.png");
+        changeImageViewImg(imgStatPersoAir, "Statistiques/statAir.png");
+        changeImageViewImg(imgStatPersoFeu, "Statistiques/statFeu.png");
+        changeImageViewImg(imgStatPersoTerre, "Statistiques/statTerre.png");
+        changeImageViewImg(imgStatPersoEau, "Statistiques/statEau.png");
+        
     }
     public void changeEffect(ImageView imv, String bolus)
     {
