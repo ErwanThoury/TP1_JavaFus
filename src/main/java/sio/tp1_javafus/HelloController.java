@@ -342,6 +342,10 @@ public class HelloController implements Initializable {
     private ImageView imgStatPersoCritique;
     @FXML
     private ImageView imgStatPersoAttaque;
+    @FXML
+    private Label lblSlash1;
+    @FXML
+    private Label lblSlash2;
 
 
     @Override
@@ -839,6 +843,12 @@ public class HelloController implements Initializable {
             deleteEffect(imgStatBonus);
             deleteEffect(imgFlecheBonus);
             deleteEffect(imgFlecheMalus);
+            lblVieActuelleAllie.setTextFill(Color.BLACK);
+            lblVieMaxAllie.setTextFill(Color.BLACK);
+            lblVieActuelleEnnemi.setTextFill(Color.BLACK);
+            lblVieMaxEnnemi.setTextFill(Color.BLACK);
+            lblSlash1.setTextFill(Color.BLACK);
+            lblSlash2.setTextFill(Color.BLACK);
         }
         else{
             versionGraphique = "deuxPointZero/";
@@ -846,6 +856,13 @@ public class HelloController implements Initializable {
             changeEffect(imgStatMalus, malusStat);
             changeEffect(imgFlecheBonus, "Up");
             changeEffect(imgFlecheMalus, "Down");
+            lblVieActuelleAllie.setTextFill(Color.WHITE);
+            lblVieMaxAllie.setTextFill(Color.WHITE);
+            lblVieActuelleEnnemi.setTextFill(Color.WHITE);
+            lblVieMaxEnnemi.setTextFill(Color.WHITE);
+            lblSlash1.setTextFill(Color.WHITE);
+            lblSlash2.setTextFill(Color.WHITE);
+
         }
         changeImageViewImg(imgPortrait, "Portrait/"+c.getLogoURL());
         changeImageViewImg(imgFond, mapCourante);
@@ -876,25 +893,37 @@ public class HelloController implements Initializable {
         changeImageViewImg(imgStatPersoFeu, "Statistiques/statFeu.png");
         changeImageViewImg(imgStatPersoTerre, "Statistiques/statTerre.png");
         changeImageViewImg(imgStatPersoEau, "Statistiques/statEau.png");
-        
+        changeImageViewImg(imgStatPersoAttaque, "Statistiques/statAttaque.png");
+        changeImageViewImg(imgStatPersoCritique, "Statistiques/statCritique.png");
+        changeImageViewImg(imgStatPersoDefense, "Statistiques/statDefense.png");
+        changeImageViewImg(imgStatPersoProspection, "Statistiques/statPros.png");
+        changeImageViewImg(imgStatPersoFuite,"Statistiques/statFuite.png");
+        changeImageViewImg(imgStatPersoEsquive, "Statistiques/statEsquive.png");
+        changeImageViewImg(imgStatPersoVie, "Statistiques/statVita.png");
+        changeImageViewImg(imgStatPersoSoin, "Statistiques/statSoin.png");
+        changeImageViewImg(imgStatMalus, "Statistiques/stat"+malusStat+".png");
+        changeImageViewImg(imgStatBonus, "Statistiques/stat"+bonusStat+".png");
+        changeImageViewImg(imgClassePagePerso,"Classes/"+p.getClasseDuPerso().getLogoURL());
+        changeImageViewImg(imgCoeurAllie, "Statistiques/statVita.png");
+        changeImageViewImg(imgCoeurEnnemi, "Statistiques/statVita.png");
     }
     public void changeEffect(ImageView imv, String bolus)
     {
         DropShadow ds = new DropShadow();
-        ds.setWidth(30.0);
-        ds.setRadius(30.0);
-        ds.setHeight(30.0);
-        ds.setSpread(0.7);
+        ds.setWidth(10.0);
+        ds.setRadius(10.0);
+        ds.setHeight(10.0);
+        ds.setSpread(0.4);
         if(bolus.equals("Air"))
             ds.setColor(Color.DARKGREEN);
         else if (bolus.equals("Terre"))
             ds.setColor(Color.DARKGOLDENROD);
         else if (bolus.equals("Feu"))
-            ds.setColor(Color.DARKORANGE);
+            ds.setColor(Color.DARKRED);
         else if (bolus.equals("Eau"))
             ds.setColor(Color.DARKBLUE);
         else if (bolus.equals("Up"))
-            ds.setColor(Color.LIGHTGREEN);
+            ds.setColor(Color.GREEN);
         else if (bolus.equals("Down"))
             ds.setColor(Color.DARKRED);
         imv.setEffect(ds);

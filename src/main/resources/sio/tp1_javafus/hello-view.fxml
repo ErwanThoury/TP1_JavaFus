@@ -704,7 +704,7 @@
                         <Insets right="10.0" />
                      </HBox.margin>
                   </Label>
-                  <Label text="/">
+                  <Label fx:id="lblSlash1" text="/">
                      <font>
                         <Font name="Rubik Bold Italic" size="29.0" />
                      </font>
@@ -757,7 +757,7 @@
                         <Font name="Rubik Bold Italic" size="29.0" />
                      </font>
                   </Label>
-                  <Label text="/">
+                  <Label fx:id="lblSlash2" text="/">
                      <font>
                         <Font name="Rubik Bold Italic" size="29.0" />
                      </font>
