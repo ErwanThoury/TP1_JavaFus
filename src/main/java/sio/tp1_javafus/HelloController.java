@@ -21,7 +21,38 @@ import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 public class HelloController implements Initializable {
-
+    @FXML
+    private ImageView imgJouer;
+    @FXML
+    private ImageView imgPortrait;
+    @FXML
+    private ImageView imgStatPersoDefense;
+    @FXML
+    private ImageView imgStatPersoVie;
+    @FXML
+    private ImageView imgStatPersoFeu;
+    @FXML
+    private ImageView imgStatPersoProspection;
+    @FXML
+    private ImageView imgStatPersoEsquive;
+    @FXML
+    private ImageView imgStatPersoFuite;
+    @FXML
+    private ImageView imgStatPersoSoin;
+    @FXML
+    private ImageView imgStatPersoEau;
+    @FXML
+    private ImageView imgStatPersoAir;
+    @FXML
+    private ImageView imgStatPersoTerre;
+    @FXML
+    private ImageView imgStatPersoCritique;
+    @FXML
+    private ImageView imgStatPersoAttaque;
+    @FXML
+    private Label lblSlash1;
+    @FXML
+    private Label lblSlash2;
     @FXML
     private ImageView imgCoeurAllie;
     @FXML
@@ -291,6 +322,7 @@ public class HelloController implements Initializable {
             , 45
             , 1500
             , 2000);
+
     Monstre mimic;
     //---------------------------------------------------------------------------------
 
@@ -314,44 +346,13 @@ public class HelloController implements Initializable {
     Personnage p = new Personnage("Null", sadida);
     ClassePerso c;
     Monstre m = new Monstre("Null", "monstreTofuMajeur.png", 0,0,0,0,0,0);
-    @FXML
-    private ImageView imgJouer;
-    @FXML
-    private ImageView imgPortrait;
-    @FXML
-    private ImageView imgStatPersoDefense;
-    @FXML
-    private ImageView imgStatPersoVie;
-    @FXML
-    private ImageView imgStatPersoFeu;
-    @FXML
-    private ImageView imgStatPersoProspection;
-    @FXML
-    private ImageView imgStatPersoEsquive;
-    @FXML
-    private ImageView imgStatPersoFuite;
-    @FXML
-    private ImageView imgStatPersoSoin;
-    @FXML
-    private ImageView imgStatPersoEau;
-    @FXML
-    private ImageView imgStatPersoAir;
-    @FXML
-    private ImageView imgStatPersoTerre;
-    @FXML
-    private ImageView imgStatPersoCritique;
-    @FXML
-    private ImageView imgStatPersoAttaque;
-    @FXML
-    private Label lblSlash1;
-    @FXML
-    private Label lblSlash2;
+
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         clearAll();
-        changeImageViewImg(imgFond, "Maps/ZoneMenu.PNG");
+        changeImageViewImg(imgFond, "Maps/zoneMenu.png");
         visible(apCommencement);
 
         lvClasses.getItems().add("Sram");
@@ -376,7 +377,7 @@ public class HelloController implements Initializable {
     public void ohZutRebelote()
     {
         clearAll();
-        changeImageViewImg(imgFond, "Maps/ZoneMenu.PNG");
+        changeImageViewImg(imgFond, "Maps/zoneMenu.png");
         visible(apCommencement);
 
         clickChangeClasse(new Event(null));
@@ -431,7 +432,7 @@ public class HelloController implements Initializable {
         changeImageViewImg(imgStatBonus, "Statistiques/stat"+classe.getBonus()+".png");
         changeImageViewImg(imgStatMalus, "Statistiques/stat"+classe.getMalus()+".png");
         changeImageViewImg(imgClasseChoix, "Classes/"+classe.getLogoURL());
-        changeImageViewImg(imgPortrait, "portrait/"+classe.getLogoURL());
+        changeImageViewImg(imgPortrait, "Portrait/"+classe.getLogoURL());
         malusStat = classe.getMalus();
         bonusStat = classe.getBonus();
         if(!versionGraphique.equals("deuxPointZero/"))
@@ -465,14 +466,14 @@ public class HelloController implements Initializable {
         clearAll();
         changeImageViewImg(imgFond, "Maps/zoneChoix.png");
         visible(apChoixAstrub);
-        changeZone("Maps/ZoneChoix.png", apChoixAstrub);
+        changeZone("Maps/zoneChoix.png", apChoixAstrub);
     }
     @FXML
-    public void GoToZoneMonstre(Event event) { changeZone("Maps/ZoneMonstre.png", apChoixZone); }
+    public void GoToZoneMonstre(Event event) { changeZone("Maps/zoneMonstre.png", apChoixZone); }
     @FXML
-    public void ClickGoToZoneTofu(Event event) { intNumberZone = 1; changeZone("Maps/ZoneTofu.png", apChoixAction); }
+    public void ClickGoToZoneTofu(Event event) { intNumberZone = 1; changeZone("Maps/zoneTofu.png", apChoixAction); }
     @FXML
-    public void ClickGoToZoneBouftou(Event event) { intNumberZone = 2; changeZone("Maps/ZoneBouftou.png", apChoixAction); }
+    public void ClickGoToZoneBouftou(Event event) { intNumberZone = 2; changeZone("Maps/zoneBouftou.png", apChoixAction); }
     @FXML
     public void ClickGoToZoneCraqueleur(Event event) { intNumberZone = 3; changeZone("Maps/zoneCraqueleur.png", apChoixAction); }
     @FXML
@@ -507,13 +508,13 @@ public class HelloController implements Initializable {
     @FXML
     public void goToBoss(Event event) {
         if (intNumberZone == 1) {
-            changeZone("Maps/ZoneTofu.png", apCombat);
+            changeZone("Maps/zoneTofu.png", apCombat);
             m = monstreTofuRoyal;
         } else if (intNumberZone == 2) {
-            changeZone("Maps/ZoneBouftou.png", apCombat);
+            changeZone("Maps/zoneBouftou.png", apCombat);
             m = monstreBouftouRoyal;
         } else if (intNumberZone == 3) {
-            changeZone("Maps/ZoneCraqueleur.png", apCombat);
+            changeZone("Maps/zoneCraqueleur.png", apCombat);
             m = monstreCraqueleurRoyal;
         } else {
             aleatoireMonstre(monstreCraqueleurRoyal, monstreBouftouRoyal, monstreTofuRoyal);
@@ -538,13 +539,13 @@ public class HelloController implements Initializable {
         int rencontreAlea = alea();
         if (rencontreAlea <= 70) {
             if (intNumberZone == 1) {
-                changeZone("Maps/ZoneTofu.png", apCombat);
+                changeZone("Maps/zoneTofu.png", apCombat);
                 aleatoireMonstre(monstreTofuMineur, monstreTofu, monstreTofuMajeur);
             } else if (intNumberZone == 2) {
-                changeZone("Maps/ZoneBouftou.png", apCombat);
+                changeZone("Maps/zoneBouftou.png", apCombat);
                 aleatoireMonstre(monstreBouftouMineur, monstreBouftou, monstreBouftouMajeur);
             } else if (intNumberZone == 3) {
-                changeZone("Maps/ZoneCraqueleur.png", apCombat);
+                changeZone("Maps/zoneCraqueleur.png", apCombat);
                 aleatoireMonstre(monstreCraqueleurMineur, monstreCraqueleur, monstreCraqueleurMajeur);
             } else {
                 aleatoireMonstre(monstreCraqueleurRoyal, monstreBouftouRoyal, monstreTofuRoyal);
@@ -562,7 +563,7 @@ public class HelloController implements Initializable {
             a.getDialogPane().getButtonTypes().add(b1);
             a.getDialogPane().getButtonTypes().add(b2);
             ImageView imageDialogue = new ImageView(getClass().getResource(
-                    "/Images/"+versionGraphique+"Interfaces/Coffre.png"
+                    "/Images/"+versionGraphique+"Interfaces/coffre.png"
             ).toExternalForm());
             imageDialogue.setFitWidth(50);
             imageDialogue.setFitHeight(50);
@@ -879,20 +880,20 @@ public class HelloController implements Initializable {
         }
         changeImageViewImg(imgPortrait, "Portrait/"+c.getLogoURL());
         changeImageViewImg(imgFond, mapCourante);
-        changeImageViewImg(imgMonstreBouftou, "Monstres/monstreBouftou.PNG");
-        changeImageViewImg(imgMonstreTofu, "Monstres/monstreTofuMineur.PNG");
-        changeImageViewImg(imgMonstreCraqueleur, "Monstres/monstreCraqueleur.PNG");
+        changeImageViewImg(imgMonstreBouftou, "Monstres/monstreBouftou.png");
+        changeImageViewImg(imgMonstreTofu, "Monstres/monstreTofuMineur.png");
+        changeImageViewImg(imgMonstreCraqueleur, "Monstres/monstreCraqueleur.png");
         changeImageViewImg(imgLogoClasse, "Logo/"+c.getLogoURL());
         changeImageViewImg(imgClasseChoix, "Classes/"+c.getLogoURL());
         changeImageViewImg(imgPersonnageCbt, "Classes/"+p.getClasseDuPerso().getLogoURL());
         changeImageViewImg(imgMonstreCbt, "Monstres/"+m.getImg());
         changeImageViewImg(imgBarreDuBas, "Interfaces/fond.png");
         changeImageViewImg(imgBarreDuHaut, "Interfaces/barreWindows.png");
-        changeImageViewImg(imgFlecheBonus, "Interfaces/FlecheVerte.png");
-        changeImageViewImg(imgFlecheMalus, "Interfaces/FlecheRouge.png");
+        changeImageViewImg(imgFlecheBonus, "Interfaces/flecheVerte.png");
+        changeImageViewImg(imgFlecheMalus, "Interfaces/flecheRouge.png");
         changeImageViewImg(imgJouer, "Interfaces/interfaceValider.png");
         changeImageViewImg(imgChoixFichePerso,"Interfaces/pointBleu.png");
-        changeImageViewImg(imgChoixBoutique, "Interfaces/PointRouge.png");
+        changeImageViewImg(imgChoixBoutique, "Interfaces/pointRouge.png");
         changeImageViewImg(imgChoixMonstre, "Interfaces/pointMarron.png");
         changeImageViewImg(imgParchAir, "Parchemins/parcheminAir.png");
         changeImageViewImg(imgParchEau, "Parchemins/parcheminEau.png");
@@ -922,7 +923,7 @@ public class HelloController implements Initializable {
         changeImageViewImg(imgAlea, "Interfaces/aleatoire.png");
         changeImageViewImg(imgBoss, "Interfaces/couronne.png");
         changeImageViewImg(imgPotionRappel, "Interfaces/potionRappel.png");
-        changeImageViewImg(imgZoneNomClasse, "Interfaces/InterfaceChoix.png");
+        changeImageViewImg(imgZoneNomClasse, "Interfaces/interfaceChoix.png");
         changeImageViewImg(imgFondBoutique, "Interfaces/fondBoutique.png");
     }
     public void changeEffect(ImageView imv, String bolus)

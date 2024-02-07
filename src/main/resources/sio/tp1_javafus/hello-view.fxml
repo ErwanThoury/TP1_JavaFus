@@ -34,7 +34,7 @@
          <children>
             <ImageView fx:id="imgFond" fitHeight="600.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Images/unPointVingtNeuf/Maps/zoneMarchand.PNG" />
+                  <Image url="@../../Images/unPointVingtNeuf/Maps/zoneMarchand.png" />
                </image>
             </ImageView>
             <AnchorPane fx:id="apCommencement" prefHeight="600.0" prefWidth="900.0">
@@ -83,7 +83,7 @@
                                                 <Insets right="10.0" />
                                              </HBox.margin>
                                              <image>
-                                                <Image url="@../../Images/unPointVingtNeuf/Interfaces/FlecheVerte.png" />
+                                                <Image url="@../../Images/unPointVingtNeuf/Interfaces/flecheVerte.png" />
                                              </image>
                                           </ImageView>
                                           <ImageView fx:id="imgStatBonus" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
@@ -100,7 +100,7 @@
                                                 <Insets right="10.0" />
                                              </HBox.margin>
                                              <image>
-                                                <Image url="@../../Images/unPointVingtNeuf/Interfaces/FlecheRouge.png" />
+                                                <Image url="@../../Images/unPointVingtNeuf/Interfaces/flecheRouge.png" />
                                              </image>
                                           </ImageView>
                                           <ImageView fx:id="imgStatMalus" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
@@ -132,7 +132,7 @@
                                        <children>
                                           <ImageView fx:id="imgZoneNomClasse" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../../Images/unPointVingtNeuf/Interfaces/interfaceChoix.PNG" />
+                                                <Image url="@../../Images/unPointVingtNeuf/Interfaces/interfaceChoix.png" />
                                              </image>
                                           </ImageView>
                                           <TextField fx:id="txtNomPerso" alignment="CENTER" layoutX="26.0" layoutY="14.0" promptText="Saisir un nom" />
@@ -148,7 +148,7 @@
                                     </AnchorPane>
                                     <ImageView fx:id="imgJouer" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#onClickCreatePerso" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../Images/unPointVingtNeuf/Interfaces/interfaceValider.PNG" />
+                                          <Image url="@../../Images/unPointVingtNeuf/Interfaces/interfaceValider.png" />
                                        </image>
                                     </ImageView>
                                  </children>
@@ -247,7 +247,7 @@
                                  <children>
                                     <ImageView fx:id="imgInterfaceCombatAllie" fitHeight="150.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../Images/unPointVingtNeuf/Interfaces/interfaceChoix.PNG" />
+                                          <Image url="@../../Images/unPointVingtNeuf/Interfaces/interfaceChoix.png" />
                                        </image>
                                     </ImageView>
                                     <Label fx:id="lblNomAllie" alignment="CENTER" layoutX="14.0" layoutY="28.0" prefHeight="24.0" prefWidth="275.0" text="Craqueterre monstrueux" textFill="WHITE">
@@ -281,7 +281,7 @@
                                  <children>
                                     <ImageView fx:id="imgInterfaceCombatEnnemi" fitHeight="150.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../Images/unPointVingtNeuf/Interfaces/interfaceChoix.PNG" />
+                                          <Image url="@../../Images/unPointVingtNeuf/Interfaces/interfaceChoix.png" />
                                        </image>
                                     </ImageView>
                                     <Label fx:id="lblNomEnnemi" alignment="CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="27.0" prefHeight="24.0" prefWidth="279.0" text="Craqueterre monstrueux" textFill="WHITE">
@@ -387,7 +387,7 @@
                               </Label>
                               <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../Images/unPointVingtNeuf/Statistiques/Kama.png" />
+                                    <Image url="@../../Images/unPointVingtNeuf/Statistiques/kama.png" />
                                  </image>
                                  <HBox.margin>
                                     <Insets left="10.0" />
@@ -435,7 +435,7 @@
                                     </Label>
                                     <ImageView fitHeight="43.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../Images/unPointVingtNeuf/Statistiques/Kama.png" />
+                                          <Image url="@../../Images/unPointVingtNeuf/Statistiques/kama.png" />
                                        </image>
                                     </ImageView>
                                  </children>
@@ -683,7 +683,7 @@
          <children>
             <ImageView fx:id="imgBarreDuBas" fitHeight="50.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Images/unPointVingtNeuf/Interfaces/fond.PNG" />
+                  <Image url="@../../Images/unPointVingtNeuf/Interfaces/fond.png" />
                </image>
             </ImageView>
             <HBox fx:id="hbCombat" alignment="CENTER" prefHeight="50.0" prefWidth="900.0">
