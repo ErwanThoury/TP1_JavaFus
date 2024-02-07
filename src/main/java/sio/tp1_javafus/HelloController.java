@@ -637,7 +637,6 @@ public class HelloController implements Initializable {
     public void ClickImageAttaque(Event event) {
         m.perdrePDV(p.attaqueTotale());
         if(mortMonstre()) {
-            p.gainKama(intervalleInt(m.getKamaGagneMin(),m.getKamaGagneMax()));
             return;
         }
         p.perdrePDV(m.attaqueTotale());
@@ -692,7 +691,18 @@ public class HelloController implements Initializable {
         if(m.getPvActuel() <= 0)
         {
             clickGoToAstrub(null);
-            p.gainKama(intervalleInt(m.getKamaGagneMin(), m.getKamaGagneMax()));
+            int gain = p.gainKama(intervalleInt(m.getKamaGagneMin(), m.getKamaGagneMax()));
+            Alert coffreGain = new Alert(Alert.AlertType.INFORMATION);
+            ImageView imageKama = new ImageView(getClass().getResource(
+                    "/Images/"+versionGraphique+"Monstres/"+m.getImg()
+            ).toExternalForm());
+            imageKama.setFitWidth(100);
+            imageKama.setFitHeight(100);
+            coffreGain.setGraphic(imageKama);
+            coffreGain.setContentText("Quelle chance ! Vous avez trouvé "+gain+" kamas sur le "+m.getNom());
+            coffreGain.setTitle("Kamas !");
+            coffreGain.setHeaderText("");
+            coffreGain.showAndWait();
             return true;
         }
         return false;
@@ -912,6 +922,8 @@ public class HelloController implements Initializable {
         changeImageViewImg(imgAlea, "Interfaces/aleatoire.png");
         changeImageViewImg(imgBoss, "Interfaces/couronne.png");
         changeImageViewImg(imgPotionRappel, "Interfaces/potionRappel.png");
+        changeImageViewImg(imgZoneNomClasse, "Interfaces/InterfaceChoix.png");
+        changeImageViewImg(imgFondBoutique, "Interfaces/fondBoutique.png");
     }
     public void changeEffect(ImageView imv, String bolus)
     {
